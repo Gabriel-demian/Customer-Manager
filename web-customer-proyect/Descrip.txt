@@ -1,0 +1,7 @@
+App web de manejo de clientes. 
+		Opciones
+			-Listar
+			-Agregar
+			-Editar
+			-Borrar
+			-Buscar(en proceso..)
