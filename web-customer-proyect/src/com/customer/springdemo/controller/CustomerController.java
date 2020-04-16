@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.customer.springdemo.dao.CustomerDAO;
 import com.customer.springdemo.entity.Customer;
 import com.customer.springdemo.service.CustomerService;
+import com.github.javafaker.Faker;
 
 @Controller
 @RequestMapping("/customer")
@@ -88,7 +89,40 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 	
-	//Proximamente Buscar!
+	
+	 @GetMapping("/search")
+    public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
+                                    Model theModel) {
+
+        // search customers from the service
+        List<Customer> theCustomers = customerService.searchCustomers(theSearchName);
+                
+        // add the customers to the model
+        theModel.addAttribute("customers", theCustomers);
+
+        return "list-customers";        
+   	}
+	
+	//Faker
+	@GetMapping("/showFormFaker")
+	public String fakerCustomer(){
+		Faker faker = new Faker();
+		Customer theCustomer = new Customer();
+		
+		theCustomer.setFirstName(faker.name().firstName());
+		theCustomer.setLastName(faker.name().lastName());
+		theCustomer.setEmail(theCustomer.getFirstName() +"."+ theCustomer.getLastName()+"@gmail.com");
+		
+		// guardar el cliente usando el servicio
+		customerService.saveCustomer(theCustomer);
+		
+		return "redirect:/customer/list";
+	}
+	
+	
+	
+	
+	
 }
 
 
