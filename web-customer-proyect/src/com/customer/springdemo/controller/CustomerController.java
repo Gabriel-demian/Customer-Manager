@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.customer.springdemo.dao.CustomerDAO;
 import com.customer.springdemo.entity.Customer;
 import com.customer.springdemo.service.CustomerService;
 import com.github.javafaker.Faker;
@@ -77,7 +76,7 @@ public class CustomerController {
 		theModel.addAttribute("customer", theCustomer);
 		
 		// enviar al form
-		return "customer-form";
+		return "edit-customer-form";
 	}
 	
 	@GetMapping("/delete")
@@ -119,24 +118,4 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 	
-	
-	
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

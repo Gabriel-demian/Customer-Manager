@@ -28,7 +28,6 @@
 		
 	</head>
 	
-	<!-- ESTE JSP ES LA PLANTILLA SIMPLE, SIN VALIDACIONES, PERO FUNCIONAL A SU MANERA -->
 	
 	<body>
 		
@@ -42,13 +41,26 @@
 			<h3>Save Customer</h3>
 		
 			<form name="RegForm" action="saveCustomer" onsubmit="return Validador()" method="post">
-				
-				<p>First Name: <input type="text" size=45 name="firstName" id="firstName" required> </p><br>        
-			    <p>Last Name: <input type="text" size=45 name="lastName" id="lastName" required>  </p><br> 
-			    <p>E-mail: <input type="email" size=45 name="email" id="email" required>  </p><br> 
-				
-				<p><input type="submit" value="send" name="Submit">  
+				<div class="form-row">
+					
+					<div id="firstName">
+						<p>First Name: <input type="text" size=45 name="firstName" id="firstName" > </p>
+						<div id="name_error"></div>
+   					</div>
+					
+					<div id="lastName">
+				    	<p>Last Name: <input type="text" size=45 name="lastName" id="lastName" >  </p>
+				   	 	<div id="lastname_error"></div>
+   					</div>
+   					
+   					<div id="email">
+				    	<p>E-mail: <input type="email" size=45 name="email" id="email" >  </p>
+				    	<div id="email_error"></div>
+   					</div>
+					<br> 
+					<p><input type="submit" value="send" name="Submit">  
 				</p> 
+				</div>
 			</form>
 			
 			

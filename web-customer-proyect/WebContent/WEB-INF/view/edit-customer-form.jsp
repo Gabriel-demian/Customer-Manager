@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<title>Save Customer</title>
+		<title>Edit Customer</title>
 		
 		<!-- Referenciar la plantilla de estilos -->
 		<link type="text/css"
@@ -20,14 +20,13 @@
 			rel="stylesheet"
 			href="${pageContext.request.contextPath}/resources/css/add-customer-style.css" />
 		
-		<script src="${pageContext.request.contextPath}/resources/js/validation.js"></script>
 		
-		<script type="text/javascript">
-			var urlAsynchronousHTTP='${pageContext.request.contextPath}/src';
-		</script>
+		<script src="${pageContext.request.contextPath}/resources/js/validation.js"></script>
 		
 		
 	</head>
+	
+	<!-- ESTE JSP ES LA PLANTILLA SIMPLE, SIN VALIDACIONES, PERO FUNCIONAL A SU MANERA -->
 	
 	<body>
 		
@@ -38,9 +37,9 @@
 		</div>
 		
 		<div id="container">
-			<h3>Save Customer</h3>
+			<h3>Edit Customer</h3>
 			
-			<form:form id="saveCustomer" modelAttribute="customer" method="POST">
+			<form:form name="RegForm" action="saveCustomer" modelAttribute="customer" method="POST" onsubmit="return Validador()">
 				<!-- asosiar los datos con el id del cliente -->
 				<form:hidden path="id"/>
 				
@@ -48,23 +47,22 @@
 					<tbody>
 						<tr>
 							<td><label>First Name:</label></td>
-							<td><form:input path="firstName" id="firstName"/></td>
+							<td><form:input path="firstName" type="text" minlength="3" maxlength="10" /></td>
 						</tr>
 						
 						<tr>
 							<td><label>Last Name:</label></td>
-							<td><form:input path="lastName" id="lastName"/></td>
+							<td><form:input path="lastName" minlength="3" maxlength="10" /></td>
 						</tr>
 						
 						<tr>
 							<td><label>Email:</label></td>
-							<td><form:input path="email" type="email" id="mail"/></td>
+							<td><form:input path="email" type="email" minlength="10" /></td>
 						</tr>
 						
 						<tr>
 							<td><label></label></td>
-							<td><input type="submit" value="Save" class="save" id="submit" 
-							onclick="mostrarMensaje()" ></td>
+							<td><input type="submit" value="Save" class="save"></td>
 						</tr>
 					</tbody>
 				</table>
@@ -81,13 +79,3 @@
 	</body>
 	
 </html>
-
-
-
-
-
-
-
-
-
-
