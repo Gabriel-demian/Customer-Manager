@@ -20,15 +20,14 @@
 			rel="stylesheet"
 			href="${pageContext.request.contextPath}/resources/css/add-customer-style.css" />
 		
+		<script src="${pageContext.request.contextPath}/resources/js/validation.js"></script>
+		
 		<script type="text/javascript">
 			var urlAsynchronousHTTP='${pageContext.request.contextPath}/src';
 		</script>
 		
-		<script src="${pageContext.request.contextPath}/resources/js/validation.js"></script>
 		
 	</head>
-	
-	<!-- ESTE JSP ES LA PLANTILLA SIMPLE, SIN VALIDACIONES, PERO FUNCIONAL A SU MANERA -->
 	
 	<body>
 		
@@ -40,17 +39,37 @@
 		
 		<div id="container">
 			<h3>Save Customer</h3>
-		
-			<form name="RegForm" action="saveCustomer" onsubmit="return Validador()" method="post">
-				
-				<p>First Name: <input type="text" size=45 name="firstName" id="firstName" required> </p><br>        
-			    <p>Last Name: <input type="text" size=45 name="lastName" id="lastName" required>  </p><br> 
-			    <p>E-mail: <input type="email" size=45 name="email" id="email" required>  </p><br> 
-				
-				<p><input type="submit" value="send" name="Submit">  
-				</p> 
-			</form>
 			
+			<form:form id="saveCustomer" modelAttribute="customer" method="POST">
+				<!-- asosiar los datos con el id del cliente -->
+				<form:hidden path="id"/>
+				
+				<table>
+					<tbody>
+						<tr>
+							<td><label>First Name:</label></td>
+							<td><form:input path="firstName" id="firstName"/></td>
+						</tr>
+						
+						<tr>
+							<td><label>Last Name:</label></td>
+							<td><form:input path="lastName" id="lastName"/></td>
+						</tr>
+						
+						<tr>
+							<td><label>Email:</label></td>
+							<td><form:input path="email" type="email" id="mail"/></td>
+						</tr>
+						
+						<tr>
+							<td><label></label></td>
+							<td><input type="submit" value="Save" class="save" id="submit" 
+							onclick="mostrarMensaje()" ></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</form:form>
 			
 			<div style="clear; both;"></div>
 			<p>
