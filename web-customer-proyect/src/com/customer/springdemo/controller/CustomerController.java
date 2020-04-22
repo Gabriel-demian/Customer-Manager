@@ -62,7 +62,7 @@ public class CustomerController {
 		// guardar el cliente usando el servicio
 		customerService.saveCustomer(theCustomer);
 		
-		return "redirect:/customer/list";
+		return "RegistrationSuccess";
 	}
 	
 	@GetMapping("/showFormForUpdate")

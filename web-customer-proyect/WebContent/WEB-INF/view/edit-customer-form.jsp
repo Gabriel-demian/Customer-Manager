@@ -13,11 +13,6 @@
 		<!-- Referenciar la plantilla de estilos -->
 		<link type="text/css"
 			rel="stylesheet"
-			href="${pageContext.request.contextPath}/resources/css/style.css" />
-		
-		<!-- Referenciar la plantilla de estilos -->
-		<link type="text/css"
-			rel="stylesheet"
 			href="${pageContext.request.contextPath}/resources/css/add-customer-style.css" />
 		
 		
@@ -30,13 +25,13 @@
 	
 	<body>
 		
-		<div id="wrapper">
+		<div align="center" id="wrapper">
 			<div id="header">
 				<h2>CRM - Customer Relationship Manager</h2>
 			</div>
 		</div>
 		
-		<div id="container">
+		<div align="center" id="container">
 			<h3>Edit Customer</h3>
 			
 			<form:form name="RegForm" action="saveCustomer" modelAttribute="customer" method="POST" onsubmit="return Validador()">
@@ -47,19 +42,20 @@
 					<tbody>
 						<tr>
 							<td><label>First Name:</label></td>
-							<td><form:input path="firstName" type="text" minlength="3" maxlength="10" /></td>
+							<td><form:input path="firstName" type="text" /></td>
+							<td><div id="name_error"></div></td>
 						</tr>
 						
 						<tr>
 							<td><label>Last Name:</label></td>
-							<td><form:input path="lastName" minlength="3" maxlength="10" /></td>
+							<td><form:input path="lastName" type="text" /></td>
+							<td><div id="lastname_error"></div></td>
 						</tr>
-						
 						<tr>
 							<td><label>Email:</label></td>
-							<td><form:input path="email" type="email" minlength="10" /></td>
+							<td><form:input path="email" type="email"/></td>
+							<td><div id="email_error"></div></td>
 						</tr>
-						
 						<tr>
 							<td><label></label></td>
 							<td><input type="submit" value="Save" class="save"></td>

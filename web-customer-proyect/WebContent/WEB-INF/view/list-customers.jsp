@@ -14,13 +14,13 @@
 	</head>
 	<body>
 		
-		<div id="wrapper">
+		<div align="center" id="wrapper">
 			<div id="header">
 				<h2>CRM - Customer Relationship Manager</h2>
 			</div>
 		</div>
 		
-		<div id="container">
+		<div align="center"  id="container">
 		
 			<div id="content">
 				

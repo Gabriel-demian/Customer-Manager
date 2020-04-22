@@ -10,20 +10,14 @@
 		rel="stylesheet"
 		href="${pageContext.request.contextPath}/resources/css/style.css" />
 		
-		<!-- Referenciar la plantilla de estilos -->
-		<link type="text/css"
-			rel="stylesheet"
-			href="${pageContext.request.contextPath}/resources/css/style.css" />
 		
 		<!-- Referenciar la plantilla de estilos -->
 		<link type="text/css"
 			rel="stylesheet"
 			href="${pageContext.request.contextPath}/resources/css/add-customer-style.css" />
 		
-		<script type="text/javascript">
-			var urlAsynchronousHTTP='${pageContext.request.contextPath}/src';
-		</script>
 		
+		<!-- Referenciar la plantilla de validación javaScript -->
 		<script src="${pageContext.request.contextPath}/resources/js/validation.js"></script>
 		
 	</head>
@@ -31,25 +25,25 @@
 	
 	<body>
 		
-		<div id="wrapper">
+		<div align="center" id="wrapper">
 			<div id="header">
 				<h2>CRM - Customer Relationship Manager</h2>
 			</div>
 		</div>
 		
-		<div id="container">
+		<div align="center" id="container">
 			<h3>Save Customer</h3>
 		
-			<form name="RegForm" action="saveCustomer" onsubmit="return Validador()" method="post">
+			<form align="center" name="RegForm" action="saveCustomer" onsubmit="return Validador()" method="post">
 				<div class="form-row">
 					
 					<div id="firstName">
-						<p>First Name: <input type="text" size=45 name="firstName" id="firstName" > </p>
+						<p>First Name: <input type="text" size=45 name="firstName" id="firstName"> </p>
 						<div id="name_error"></div>
    					</div>
 					
 					<div id="lastName">
-				    	<p>Last Name: <input type="text" size=45 name="lastName" id="lastName" >  </p>
+				    	<p>Last Name: <input type="text" size=45 name="lastName" id="lastName">  </p>
 				   	 	<div id="lastname_error"></div>
    					</div>
    					
@@ -59,6 +53,7 @@
    					</div>
 					<br> 
 					<p><input type="submit" value="send" name="Submit">  
+					<input type="reset" value="reset" id="reset">  
 				</p> 
 				</div>
 			</form>
